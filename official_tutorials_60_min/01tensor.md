@@ -1,7 +1,7 @@
 ### Pytorch中的tensor
 #### 1.创建tensor
 **在创建tensor时，如果指定参数device = torch.device("cuda")，会直接在GPU中创建tensor**  
-**当然，也可以先在cpu中创建好tensor，然后对该tensor对象调用.to("cuda")的方法转换到gpu中**  
+**也可以先在cpu中创建好tensor，然后对该tensor对象调用.to("cuda")的方法，此时会在gpu中复制一份新的tensor并返回**  
 + torch.empty(5,3)创建一个5行3列的tensor，元素
 + torch.zeros()同上，元素为0
 + torch.ones()同上，元素为1
