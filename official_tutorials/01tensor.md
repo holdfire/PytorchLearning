@@ -20,7 +20,7 @@
 + torch.add(tensor1, tensor2, out=):将两个张量相加，结果输出到out
 
 
-#### 3. tenso对象objr的形状变化
+#### 3. tenso对象obj的形状变化
 + obj.view(new_shape)
 
 #### 4. tensor的索引index：和numpy的ndarray相似
