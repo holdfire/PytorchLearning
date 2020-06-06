@@ -55,7 +55,33 @@ model.eval()
 ```
 
 #### 4. 在一个文件中保存多个pytorch模型
+```
+# Specify a path to save to
+PATH = "model.pt"
+torch.save({
+            'modelA_state_dict': netA.state_dict(),
+            'modelB_state_dict': netB.state_dict(),
+            'optimizerA_state_dict': optimizerA.state_dict(),
+            'optimizerB_state_dict': optimizerB.state_dict(),
+            }, PATH)
+```
+```
+modelA = Net()
+modelB = Net()
+optimModelA = optim.SGD(modelA.parameters(), lr=0.001, momentum=0.9)
+optimModelB = optim.SGD(modelB.parameters(), lr=0.001, momentum=0.9)
 
+checkpoint = torch.load(PATH)
+modelA.load_state_dict(checkpoint['modelA_state_dict'])
+modelB.load_state_dict(checkpoint['modelB_state_dict'])
+optimizerA.load_state_dict(checkpoint['optimizerA_state_dict'])
+optimizerB.load_state_dict(checkpoint['optimizerB_state_dict'])
 
+modelA.eval()
+modelB.eval()
+# - or -
+modelA.train()
+modelB.train()
+```
 
 
