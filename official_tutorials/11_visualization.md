@@ -8,3 +8,4 @@
 + 使用`add_scalar(tag, scalar_value, global_step=None, walltime=None)`方法记录一个scalar的值；
 + 调用`flush()`方法确保所有events写入到磁盘中了；
 + 在终端中用`$ tensorboard --logdir=runs`命令启动tensorboard，递归文件夹找到*.tfevents*文件；
++ tensorboard默认打开本机的6006端口，浏览器中访问地址:http://localhost:6006/
