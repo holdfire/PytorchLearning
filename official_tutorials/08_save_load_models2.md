@@ -51,4 +51,10 @@ torch.save(net.module.state_dict(), PATH)
 # Load to whatever device you want
 ```
 
++ pytorch默认在
+
+
+
+#### 参考资料：
++ 1.https://blog.csdn.net/LXYTSOS/article/details/90639524?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase
 
