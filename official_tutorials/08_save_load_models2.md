@@ -1,3 +1,9 @@
+### 前言：
++ pytorch默认在内存中构造模型，如果要把模型加载到GPU上，就要使用model.to("cuda")；
++ 模型参数在gpu上和cpu上保存的格式不同，所以A上训练的模型参数加载到B上，需要设置map_location参数；
++ 模型输入默认是在内存中构造的tensor，如果是要用GPU做运算，就要使用my_tensor = my_tensor.to("cuda")。  
+  
+  
 #### 1.将模型A的参数加载到模型B中：
 + 应用场景：如在transefer learning中，将模型A的部分参数加载到模型B中后再训练模型B，来warmstart模型B；  
 ```
@@ -50,9 +56,6 @@ model.to(device)
 torch.save(net.module.state_dict(), PATH)
 # Load to whatever device you want
 ```
-
-+ pytorch默认在
-
 
 
 #### 参考资料：
