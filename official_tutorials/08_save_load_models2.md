@@ -1,7 +1,8 @@
 ### 前言：
-+ pytorch默认在cpu device中构造模型，如果要把模型加载到GPU上，就要使用model.to("cuda")，作用是convert model’s parameter tensors to CUDA tensors；
++ 使用GPU做运算时，模型输入张量要加载到GPU上并转换为cuda tensor：my_tensor = my_tensor.to("cuda")；
 + 模型参数在保存时会注明是gpu上和cpu的格式，所以设备A上训练的模型参数加载到设备B上，需要设置map_location参数做一个remap；
-+ 如果要用GPU做运算，模型输入张量就要调用方法：my_tensor = my_tensor.to("cuda")。  
++ 当模型已经加载到GPU后，要使用model.to("cuda")，作用是convert model’s parameter tensors to CUDA tensors；
+
   
 #### 1.将模型A的参数加载到模型B中：
 + 应用场景：如在transefer learning中，将模型A的部分参数加载到模型B中后再训练模型B，来warmstart模型B；  
