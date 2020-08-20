@@ -15,6 +15,7 @@
 
 #### 2.1 通过tensor对象obj，直接调用tensor的方法method
 + obj.size()返回一个tuple，张量的shape
++ obj.shape返回张量形状这个属性
 + obj.add_(obj2)将两个tensor对象相加
 #### 2.2 通过类名调用tensor的方法
 + torch.add(tensor1, tensor2, out=):将两个张量相加，结果输出到out
